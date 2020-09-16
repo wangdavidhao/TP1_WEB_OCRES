@@ -1,9 +1,7 @@
 # TP1
 
 A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
-<div align="center">
 [Règles pour le semestre](https://gitlab.com/Yrandill/instructions_web_ocres_ing4/-/blob/master/README.md)
-</div>
 
 ## Instructions
 Créer un **site CV présentable** qui pourra être mis en ligne par vos soins.
@@ -15,7 +13,7 @@ Le but de ce TP est de vous faire découvrir, pour certains, le monde du web alo
 ## Eléments obligatoires
 **Le nom respect de ces consignes sera pris en compte dans la notation**
 
-- Utiliser git et faire au moins 3 commits (exemple: je crée le structure de mon document => je commit, je crée le style de mon document => je commit,... Prenez de bonnes habitudes dès maintenant)
+- Utiliser git et faire au moins 3 commits (exemple: je crée le structure de mon document => je commit, je crée le style de mon document => je commit,... Prenez de bonnes habitudes dès maintenant
 - Un menu qui permet de naviguer dans la page ou sur des pages extérieures
 - Un formulaire de contact avec :
     - Un champ nom
