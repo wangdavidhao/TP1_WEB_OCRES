@@ -1,3 +1,20 @@
 .profileContainer > img{
     height:300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px #555;
+    
+}
+
+.profileContainer > h1, h3{
+    display:flex;
+    justify-content: center;
+}
+
+.profileContainer{
+    background-color: white;
+    border-radius: 5px;
+    padding:5px;
+    box-shadow: 4px 4px 12px #aaa;
 }

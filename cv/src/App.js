@@ -1,21 +1,29 @@
 import React from 'react';
 import './App.css';
 import Profile from './Profile.js';
+import Caption from './Caption.js';
+import Header from './Header.js';
+import Content from './Content.js';
+import Footer from './Footer.js';
+
 
 function App() {
   return (
-    <div className="App">
-      {/*Left*/}
-      <div className="cv_left"></div>
-      <Profile></Profile>
-      <div className="cv_right"></div>
-        {/*Profile*/}
-        {/*Caption*/}
-      {/*Right*/}
-        {/*Header*/}
-        {/*Main*/}
-      {/*Footer*/}
+    <div>
+      <div className="cvContainer">
+      <div className="cvLeft">
+        <Profile></Profile>
+        <Caption></Caption>
+        </div>
+      <div className="cvRight">
+        <Header></Header>
+        <Content></Content> 
+        </div>
+        
     </div>
+    <Footer></Footer>
+  </div>
+    
   );
 }
 

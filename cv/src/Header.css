@@ -1,0 +1,15 @@
+p, a{
+    display:flex;
+}
+
+
+.mailIcon, .phoneIcon, .locaIcon, .linkedinIcon, .gitIcon{
+    margin-right: 10px;
+}
+
+.headerContainer{
+    background-color: white;
+    border-radius: 5px;
+    padding:10px;
+    box-shadow: 4px 4px 12px #aaa;
+}

@@ -1,0 +1,28 @@
+body{
+    font-family:'Titillium Web',sans-serif;
+    text-align: center;
+}
+
+.cvContainer{
+    display:flex;
+    background-color: #f2f2f2;   
+              
+}
+
+
+.cvLeft{
+    flex:0.3;
+    margin-right: 50px;
+    padding: 10px;
+    
+}
+
+.cvRight{
+    flex:0.7;
+    padding: 10px;
+    
+}
+
+
+/*Font style*/
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');

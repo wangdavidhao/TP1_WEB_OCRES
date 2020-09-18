@@ -1,0 +1,23 @@
+.contentContainer{
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 4px 4px 12px #aaa;
+}
+
+.contentDiv{
+    display: flex;
+}
+
+.contentLeft{
+    
+    flex: 0.2;
+    margin: 5px;
+    justify-content: center;
+}
+
+.contentRight{
+    display: flex;
+    flex:0.8;
+    justify-content: center;
+}

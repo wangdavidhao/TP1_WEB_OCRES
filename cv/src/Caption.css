@@ -1,0 +1,9 @@
+.captionContainer{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 4px 4px 12px #aaa;
+}
