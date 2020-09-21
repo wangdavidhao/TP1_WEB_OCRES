@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import { Image, Container, Row, Col, Button } from 'react-bootstrap'; //All Bootstrap imports
 import Profile from './Profile.js';
@@ -9,9 +9,18 @@ import FooterCv from './FooterCv.js';
 import NavCv from './NavCv.js';
 import Video from './Video.js';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+    AOS.refresh();
+  }, []);
+
   return (
     <div>
       <NavCv></NavCv>
@@ -25,7 +34,7 @@ function App() {
           <div className="cvLeft">
             <Profile></Profile>
             <Caption></Caption>
-            <Video></Video>
+            <Video ></Video>
           </div>
 
       </Container>

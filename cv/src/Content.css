@@ -92,4 +92,45 @@
 
 .cvCat{
     border-bottom: 2px solid #1045F5;
+    display: flex;
+    align-items: center;
+}
+
+.pointIcon{
+    margin: 5px;
+    color: #1045F5;
+}
+
+.lvLevel{
+    color: #1045F5;
+    font-style: italic;
+
+}
+
+.liLv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.dateEducation{
+    color: #1045F5;
+    font-style: italic;
+}
+
+.schoolRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateExp{
+    color: #1045F5;
+    font-style: italic;
+
+}
+
+.expRow{
+    display: flex;
+    justify-content: space-between;
+
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import MailIcon from '@material-ui/icons/Mail';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -7,12 +7,20 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 
 import './Header.css';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 function Header() {
+
+    useEffect(() => {
+        AOS.init({ duration: 1200 });
+        AOS.refresh();
+      }, []);
     return (
         <div className="headerContainer">
-            <div className="headerInfos">
-                <div className="landingInfos">
+            <div className="headerInfos" data-aos="zoom-in-right">
+                <div className="landingInfos" >
                     <h1>Bonjour, je suis David Wang</h1>
                 </div>
                 <div >

@@ -11,8 +11,8 @@ body{
 
 .cvContainer{
     display:flex;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 3rem;
+    margin-right: 3rem;
     flex-wrap: wrap;
 }
 
@@ -25,7 +25,7 @@ body{
 .cvRight{
     flex:0.7;
     padding: 10px;
-    margin-right: 50px;
+    margin-right: 3rem;
     
 }
 
