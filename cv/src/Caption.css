@@ -6,4 +6,29 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 4px 4px 12px #aaa;
+    padding: 80px;
+}
+
+.pCaption{
+    font-style: italic;
+    padding: 20px;
+    border:solid #1045F5 3px;
+}
+
+.personIcon{
+    color:#1045F5 ;
+}
+
+.socialIcon{
+    color: lightgrey ;
+    align-items: center;
+    margin: 5px;
+}
+
+.socialIcon:hover{
+    color: #1045F5;
+    cursor: pointer;
+}
+.socialCaption{
+    margin-top: 20px;
 }
