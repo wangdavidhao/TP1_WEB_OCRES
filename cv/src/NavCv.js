@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import { Navbar, Nav, Button, Image, Row } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Image, Container, Row, Col, Button ,  FormControl, Navbar, Nav, Form} from 'react-bootstrap'; //All Bootstrap imports
+import { NavLink } from 'react-router-dom';
 import './NavCv.css'
 
 import HomeSharpIcon from '@material-ui/icons/HomeSharp';
@@ -7,58 +9,55 @@ import DraftsSharpIcon from '@material-ui/icons/DraftsSharp';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TocIcon from '@material-ui/icons/Toc';
 
-const NavDrawer = () =>{
-
-  const [drawerOpen, setDrawerOpen] = useState(true);
-
- 
-  const handleDrawer = () =>{
-    setDrawerOpen(!drawerOpen);
-  }
-
-  return(
-    <nav className="navDrawer">
-      <ul>
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/">Contact</a></li>
-        <li><a href="/">Suivez-moi !</a></li>
-      </ul>
-      <FacebookIcon onClick={handleDrawer}></FacebookIcon>
-    </nav>
-  );
-}
+import Landing from './Landing.js';
+import FooterCv from './FooterCv.js';
+import Contact from './Contact.js';
 
 export const NavCv = props => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [firstLanding,setFirstLanding] = useState(true);
 
- 
-  const handleDrawer = () =>{
-    setDrawerOpen(!drawerOpen);
+
+
+  const handleFirst = (data) =>{
+    setFirstLanding(false);
+
   }
 
-  let drawer;
 
-    if(drawerOpen){
-      drawer = <NavDrawer></NavDrawer>
-    }
+  let first;
+  if(firstLanding ){
+    first=<Landing></Landing>
+  }
     return (
+      
+      <Router>
+        <Navbar  expand="lg" className="navbarCv">
+          <Navbar.Toggle aria-controls="nav-collapse" />
+          <Navbar.Collapse id="nav-collapse">
+            <div className="navbarCv__items">
+                <ul>
+                  <li><NavLink  to="/Landing" onClick={handleFirst} className="navLi"><HomeSharpIcon></HomeSharpIcon>Accueil</NavLink></li>
+                  <li><NavLink  to="/Contact" onClick={handleFirst} className="navLi"><DraftsSharpIcon></DraftsSharpIcon>Contact</NavLink></li>
+                  <li><NavLink  to="/" className="navLi"><FacebookIcon></FacebookIcon>Suivez-moi !</NavLink></li>
+                </ul>
+            </div>
+          </Navbar.Collapse>
+      </Navbar>
+       <Switch>
+          <Route exact path="/Landing">
+            <Landing></Landing>
+          </Route>
+          <Route exact path="/Contact">
+            <Contact></Contact>
+          </Route>
+ 
+        </Switch>
+        {first}
+        <FooterCv></FooterCv>
+
+      </Router>
         
-      <header className="navbarCv">
-        <nav className="navbarCv__nav">
-          <div className="navbarBurger">
-            <TocIcon className="burgerIcon" onClick={handleDrawer}></TocIcon>
-            {drawer}
-          </div>
-          <div className="navSpace"></div>
-          <div className="navbarCv__items">
-            <ul>
-              <li><a href="/"><HomeSharpIcon></HomeSharpIcon>Accueil</a></li>
-              <li><a href="/"><DraftsSharpIcon></DraftsSharpIcon>Contact</a></li>
-              <li><a href="/"><FacebookIcon></FacebookIcon>Suivez-moi !</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      
 
         
     )

@@ -118,19 +118,14 @@ const Landing = () => {
 const ListRow = ({Icon, title, link}) => {
 
     const isActive = (path, match, location) => !!(match || path === location.pathname);
-
-
         return(
             <div>   
                 <ListItem className="itemText">
-                    <ListItemText><NavLink  activeClassName="activeLink" className="itemLink" to={link} isActive={isActive.bind(this,link)} >
-                        <Icon className="listRowIcon" fontSize="large"></Icon><p>{title}</p> </NavLink></ListItemText>
+                    <ListItemText><NavLink className="itemLink"  activeClassName="activeLink"  to={link} isActive={isActive.bind(this,link)} >
+                        <Icon className="listRowIcon" fontSize="large"></Icon><p className="itemTitle">{title}</p> </NavLink></ListItemText>
                 </ListItem>
             </div>
-            
         );
- 
-
 }
 
 
@@ -152,7 +147,7 @@ function Content() {
                         <List disablePadding dense>
                             <ListRow Icon={HomeIcon} link="/" title="Accueil"></ListRow>
                             <hr></hr>
-                            <ListRow Icon={SchoolIcon} link="/Education" title="Education"  ></ListRow>
+                            <ListRow className="listRow" Icon={SchoolIcon} link="/Education" title="Education"  ></ListRow>
                             <ListRow Icon={WorkIcon} link="/ExpPro" title="Expériences professionnelles"></ListRow>
                             <ListRow Icon={StyleIcon} link="/Competences" title="Compétences"></ListRow>
                             <ListRow Icon={LanguageIcon} link="/Langues" title="Langues"></ListRow>

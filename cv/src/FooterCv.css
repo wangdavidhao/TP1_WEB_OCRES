@@ -1,11 +1,16 @@
 .footerCv{
 
+    margin-top: 1rem;
     background-color: grey;
-    padding: 30px;
+    padding: 20px;
     color: white;
     display: flex;
     justify-content: center;
 
-
 }
 
+.copyRightLanding{
+    background-color: #4d4d4d;
+    color: white;
+    padding: 5px;
+}

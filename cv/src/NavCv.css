@@ -1,8 +1,10 @@
 .navbarCv{
 
-    background-color: grey;
-    padding: 20px;
+    padding: 30px;
     color: white;
+    display: flex;
+    justify-content: center;
+    background-color: white;
 
 }
 
@@ -17,6 +19,12 @@
     color: #1045F5;
 }
 
+.navbarCv_items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .navbarCv__items ul{
     list-style: none;
     margin: 0;
@@ -24,47 +32,16 @@
     display: flex;
 }
 
+.navbarCv__items{
+    text-decoration: none;
+    color: black;
+}
+
 .navbarCv__items li{
     padding: 0 0.5rem;
 }
 
-.navSpace{
-    flex:1;
-}
 
-.navbarBurger{
-    display: flex;
-    align-items: center;
-    border: solid white 1px;
-    margin: 5px;
-    border-radius: 3px;
-}
-
-.burgerIcon{
-    cursor: pointer;
-    padding: 5px;
-    
-}
-
-.navDrawer{
-    height: 100%;
-    position: fixed;
-    top:0;
-    left: 0;
-    background-color: white;
-    color: black;
-    width: 400px;
-    z-index: 100;
-}
-
-.navDrawer ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-}
-
-.navDrawer a{
+.navLi{
     text-decoration: none;
-
 }
-
