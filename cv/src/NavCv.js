@@ -16,50 +16,55 @@ import Contact from './Contact.js';
 export const NavCv = props => {
   const [firstLanding,setFirstLanding] = useState(true);
 
-
-
   const handleFirst = (data) =>{
     setFirstLanding(false);
 
   }
 
-
   let first;
+
   if(firstLanding ){
     first=<Landing></Landing>
   }
     return (
       
       <Router>
-        <Navbar  expand="lg" className="navbarCv">
-          <Navbar.Toggle aria-controls="nav-collapse" />
-          <Navbar.Collapse id="nav-collapse">
-            <div className="navbarCv__items">
-                <ul>
-                  <li><NavLink  to="/Landing" onClick={handleFirst} className="navLi"><HomeSharpIcon></HomeSharpIcon>Accueil</NavLink></li>
-                  <li><NavLink  to="/Contact" onClick={handleFirst} className="navLi"><DraftsSharpIcon></DraftsSharpIcon>Contact</NavLink></li>
-                  <li><NavLink  to="/" className="navLi"><FacebookIcon></FacebookIcon>Suivez-moi !</NavLink></li>
-                </ul>
-            </div>
-          </Navbar.Collapse>
-      </Navbar>
-       <Switch>
-          <Route exact path="/Landing">
-            <Landing></Landing>
-          </Route>
-          <Route exact path="/Contact">
-            <Contact></Contact>
-          </Route>
- 
+        <Container fluid className="no-gutters">
+          <Row className="rowHeader py-4">
+            <Col lg="12" className="d-flex justify-content-center align-items-center">
+              <Navbar  expand="lg" className="navbarCv">
+                <Navbar.Toggle aria-controls="nav-collapse" />
+                <Navbar.Collapse id="nav-collapse">
+                  <div className="navbarCv__items">
+                      <ul>
+                        <li><NavLink  to="/Landing" onClick={handleFirst} className="navLi"><HomeSharpIcon></HomeSharpIcon>Accueil</NavLink></li>
+                        <li><NavLink  to="/Contact" onClick={handleFirst} className="navLi"><DraftsSharpIcon></DraftsSharpIcon>Contact</NavLink></li>
+                        <li><NavLink  to="/" className="navLi"><FacebookIcon></FacebookIcon>Suivez-moi !</NavLink></li>
+                      </ul>
+                  </div>
+                </Navbar.Collapse>
+            </Navbar>
+
+            </Col>
+          </Row>
+          
+
+        </Container>
+          
+
+        <Switch>
+            <Route exact path="/Landing">
+              <Landing></Landing>
+            </Route>
+            <Route exact path="/Contact">
+              <Contact></Contact>
+            </Route>
         </Switch>
         {first}
         <FooterCv></FooterCv>
 
       </Router>
-        
-      
-
-        
+   
     )
 }
 

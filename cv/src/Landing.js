@@ -11,23 +11,21 @@ import './Landing.css';
 function Landing() {
     return (
         <div>
-            <Container fluid className="cvContainer">
+            <Container className="cvContainer">
                 <Row className="my-5">
-                    <Col lg="8" className="cvRight">
+                    <Col lg="8">
                         <Header></Header>
                         <Content></Content> 
-                        
                     </Col>
-                    <Col lg="4" className="cvLeft">
+                    <Col lg="4">
                         <Profile></Profile>
                         <Caption></Caption>
+                        <Video></Video>
                     </Col>
 
                 </Row>  
 
             </Container>
-            
-            
         </div>
     )
 }

@@ -22,7 +22,7 @@ import 'aos/dist/aos.css';
 const Education = props => {
     return (
         <Container>
-            <h1 className="cvCat"><RemoveIcon className="pointIcon" fontSize="large"></RemoveIcon>{props.title}</h1>
+            <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
             <p className="schoolRow">Ecole d'ingénieur Ecole Centrale d'Electronique ECE Paris<span className="dateEducation">2017-présent</span></p>
             <p className="schoolRow">Bac S Lycée Catherine Labouré<span className="dateEducation">2015-2017</span></p>
         </Container>
@@ -32,7 +32,7 @@ const Education = props => {
 const ExpPro = props => {
     return (
         <Container>
-            <h1 className="cvCat"><RemoveIcon className="pointIcon" fontSize="large"></RemoveIcon>{props.title}</h1>
+            <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
             <p className="expRow">Conseiller clientèle - Furla Galeries Lafayette Haussmann<span className="dateExp">12/2019-02/2020</span></p>
             <p className="expRow">Développeur junior - EventAdvice<span className="dateExp">01/2019-08/2020</span></p>
             <p className="expRow">Conseiller en vente - Golden Miss<span className="dateExp">07/2019-09/2019</span></p>
@@ -45,7 +45,7 @@ const Competences = props => {
 
     return(
         <Container>
-            <h1 className="cvCat"><RemoveIcon className="pointIcon" fontSize="large"></RemoveIcon>{props.title}</h1>
+            <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
             <ul>
                 <li>C/C++</li>
                 <li>JAVA</li>
@@ -62,7 +62,7 @@ const Accomplissements = props => {
 
     return(
         <Container>
-            <h1 className="cvCat"><RemoveIcon className="pointIcon" fontSize="large"></RemoveIcon>{props.title}</h1>
+            <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
             <ul>
                 <li>Application mobile Soap</li>
                 <li>Concours de danse (K-POP) 2019</li>
@@ -77,7 +77,7 @@ const Langues = props => {
 
     return(
         <Container>
-                <h1 className="cvCat"><RemoveIcon className="pointIcon" fontSize="large"></RemoveIcon>{props.title}</h1>
+                <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
                 <ul>
                     <li className="liLv">Français<span className="lvLevel">Bilingue</span></li>
                     <li className="liLv" >Anglais<span className="lvLevel">Courant C1</span></li>
@@ -93,7 +93,7 @@ const Langues = props => {
 const Centre = props => {
     return(
         <Container>
-            <h1 className="cvCat"><RemoveIcon className="pointIcon" fontSize="large"></RemoveIcon>{props.title}</h1>
+            <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
             <ul>
                 <span>Dessin - Design - Architecture - Programmation - Informatique - Voyage - Montage vidéo - Web Design</span>
             </ul>
@@ -119,12 +119,16 @@ const ListRow = ({Icon, title, link}) => {
 
     const isActive = (path, match, location) => !!(match || path === location.pathname);
         return(
-            <div>   
+             
                 <ListItem className="itemText">
-                    <ListItemText><NavLink className="itemLink"  activeClassName="activeLink"  to={link} isActive={isActive.bind(this,link)} >
-                        <Icon className="listRowIcon" fontSize="large"></Icon><p className="itemTitle">{title}</p> </NavLink></ListItemText>
+                    <ListItemText>
+                        <NavLink className="itemLink"  activeClassName="activeLink"  to={link} isActive={isActive.bind(this,link)} >
+                            <Icon className="listRowIcon" ></Icon>
+                            <p className="itemTitle">{title}</p> 
+                        </NavLink>
+                    </ListItemText>
                 </ListItem>
-            </div>
+            
         );
 }
 
@@ -138,28 +142,25 @@ function Content() {
 
     return (
 
-        <div className="contentContainer">
+        <Container className="contentContainer">
                 <h1 className="cvWelcome">BIENVENUE SUR MON CV</h1>
                 <hr></hr>
-                <div className="contentDiv">
+                <Row className="contentDiv">
                     <Router > 
-                        <div className="contentLeft">
-                        <List disablePadding dense>
-                            <ListRow Icon={HomeIcon} link="/" title="Accueil"></ListRow>
-                            <hr></hr>
-                            <ListRow className="listRow" Icon={SchoolIcon} link="/Education" title="Education"  ></ListRow>
-                            <ListRow Icon={WorkIcon} link="/ExpPro" title="Expériences professionnelles"></ListRow>
-                            <ListRow Icon={StyleIcon} link="/Competences" title="Compétences"></ListRow>
-                            <ListRow Icon={LanguageIcon} link="/Langues" title="Langues"></ListRow>
-                            <ListRow Icon={ReceiptIcon} link="/Accomplissements" title="Accomplissements"></ListRow>
-                            <ListRow Icon={SportsEsportsIcon} link="/Centre" title="Centre d'interêt"></ListRow>
-                        </List>
-                                
-                        </div>    
+                        <Col lg="3" className="contentLeft">
+                            <List disablePadding dense>
+                                <ListRow Icon={HomeIcon} link="/" title="Accueil"></ListRow>
+                                <hr></hr>
+                                <ListRow className="listRow" Icon={SchoolIcon} link="/Education" title="Education"  ></ListRow>
+                                <ListRow Icon={WorkIcon} link="/ExpPro" title="Expériences professionnelles"></ListRow>
+                                <ListRow Icon={StyleIcon} link="/Competences" title="Compétences"></ListRow>
+                                <ListRow Icon={LanguageIcon} link="/Langues" title="Langues"></ListRow>
+                                <ListRow Icon={ReceiptIcon} link="/Accomplissements" title="Accomplissements"></ListRow>
+                                <ListRow Icon={SportsEsportsIcon} link="/Centre" title="Centre d'interêt"></ListRow>
+                            </List>
+                        </Col>  
 
-                        <hr className="hrDiv"></hr>
-                        
-                        <div className="contentRight">
+                        <Col lg="9">
                             <Route exact path="/"><Landing></Landing></Route>
                             <Route exact path="/Education"><Education title="Education"></Education></Route>
                             <Route exact path="/ExpPro"><ExpPro title="Expériences professionnelles"></ExpPro></Route>
@@ -167,10 +168,10 @@ function Content() {
                             <Route exact path="/Accomplissements"><Accomplissements title="Accomplissements"></Accomplissements></Route>
                             <Route exact path="/Langues"><Langues title="Langues"></Langues></Route>
                             <Route exact path="/Centre"><Centre title="Centre d'interêt"></Centre></Route>
-                        </div> 
+                        </Col> 
                     </Router>
-                </div>   
-        </div>
+                </Row>   
+        </Container>
 
     );
 }
