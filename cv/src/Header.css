@@ -1,12 +1,16 @@
 p, a{
     display:flex;
     color:inherit;
-    text-decoration: none;
+    text-decoration: none !important;
     margin: 3px;
+    color: inherit;
 }
 
 a:hover{
     color:#1045F5;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
 }
 
 

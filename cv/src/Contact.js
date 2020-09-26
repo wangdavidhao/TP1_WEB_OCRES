@@ -3,9 +3,13 @@ import { Image, Container, Row, Col, Button , Form, FormControl} from 'react-boo
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Contact.css';
 
+import NavCv from './NavCv.js';
+import FooterCv from './FooterCv.js';
+
 function Contact() {
     return (
         <div>
+            <NavCv title="contact"></NavCv>
             <Container className="contactContainer py-5">
                 <Row className="d-flex justify-content-center">
                     
@@ -35,6 +39,7 @@ function Contact() {
                     </Form>
                 </Row>
             </Container>
+            <FooterCv></FooterCv>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { Image, Container, Row, Col, Button ,  FormControl, Navbar, Nav, Form} from 'react-bootstrap'; //All Bootstrap imports
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import './NavCv.css'
 
 import HomeSharpIcon from '@material-ui/icons/HomeSharp';
@@ -14,21 +14,17 @@ import FooterCv from './FooterCv.js';
 import Contact from './Contact.js';
 
 export const NavCv = props => {
-  const [firstLanding,setFirstLanding] = useState(true);
 
-  const handleFirst = (data) =>{
-    setFirstLanding(false);
+  const isActive = (path, match, location) => !!(match || path === location.pathname);
+  const history = useHistory();
 
-  }
+  const redirect = path => history.push(path);
 
-  let first;
+  console.log(props.title);
 
-  if(firstLanding ){
-    first=<Landing></Landing>
-  }
+
     return (
       
-      <Router>
         <Container fluid className="no-gutters">
           <Row className="rowHeader py-4">
             <Col lg="12" className="d-flex justify-content-center align-items-center">
@@ -37,9 +33,9 @@ export const NavCv = props => {
                 <Navbar.Collapse id="nav-collapse">
                   <div className="navbarCv__items">
                       <ul>
-                        <li><NavLink  to="/Landing" onClick={handleFirst} className="navLi"><HomeSharpIcon></HomeSharpIcon>Accueil</NavLink></li>
-                        <li><NavLink  to="/Contact" onClick={handleFirst} className="navLi"><DraftsSharpIcon></DraftsSharpIcon>Contact</NavLink></li>
-                        <li><NavLink  to="/" className="navLi"><FacebookIcon></FacebookIcon>Suivez-moi !</NavLink></li>
+                        <li><a className={props.title==="accueil" ? "selected" : ""} onClick={() => redirect('./')}><HomeSharpIcon></HomeSharpIcon><p >Accueil</p></a></li>
+                        <li><a className={props.title==="contact" ? "selected" : ""} onClick={() => redirect('./Contact')}><DraftsSharpIcon></DraftsSharpIcon><p >Contact</p></a></li>
+                        <li><a><FacebookIcon></FacebookIcon><p>Suivez-moi !</p></a></li>
                       </ul>
                   </div>
                 </Navbar.Collapse>
@@ -47,24 +43,7 @@ export const NavCv = props => {
 
             </Col>
           </Row>
-          
-
         </Container>
-          
-
-        <Switch>
-            <Route exact path="/Landing">
-              <Landing></Landing>
-            </Route>
-            <Route exact path="/Contact">
-              <Contact></Contact>
-            </Route>
-        </Switch>
-        {first}
-        <FooterCv></FooterCv>
-
-      </Router>
-   
     )
 }
 

@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Image, Container, Row, Col, Button } from 'react-bootstrap'; //All Bootstrap imports
 import './Content.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -43,7 +43,7 @@ const ExpPro = props => {
 
 const Competences = props => {
 
-    return(
+    return (
         <Container>
             <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
             <ul>
@@ -60,7 +60,7 @@ const Competences = props => {
 
 const Accomplissements = props => {
 
-    return(
+    return (
         <Container>
             <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
             <ul>
@@ -75,15 +75,15 @@ const Accomplissements = props => {
 
 const Langues = props => {
 
-    return(
+    return (
         <Container>
-                <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
-                <ul>
-                    <li className="liLv">Français<span className="lvLevel">Bilingue</span></li>
-                    <li className="liLv" >Anglais<span className="lvLevel">Courant C1</span></li>
-                    <li className="liLv">Chinois<span className="lvLevel">Bilingue</span></li>
-                    <li className="liLv">Espagnol<span className="lvLevel">Intermédiaire B2</span></li>
-                </ul>     
+            <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
+            <ul>
+                <li className="liLv">Français<span className="lvLevel">Bilingue</span></li>
+                <li className="liLv" >Anglais<span className="lvLevel">Courant C1</span></li>
+                <li className="liLv">Chinois<span className="lvLevel">Bilingue</span></li>
+                <li className="liLv">Espagnol<span className="lvLevel">Intermédiaire B2</span></li>
+            </ul>
         </Container>
 
     );
@@ -91,7 +91,7 @@ const Langues = props => {
 }
 
 const Centre = props => {
-    return(
+    return (
         <Container>
             <h1 className="cvCat"><RemoveIcon className="pointIcon" ></RemoveIcon>{props.title}</h1>
             <ul>
@@ -115,21 +115,21 @@ const Landing = () => {
     );
 }
 
-const ListRow = ({Icon, title, link}) => {
+const ListRow = ({ Icon, title, link }) => {
 
     const isActive = (path, match, location) => !!(match || path === location.pathname);
-        return(
-             
-                <ListItem className="itemText">
-                    <ListItemText>
-                        <NavLink className="itemLink"  activeClassName="activeLink"  to={link} isActive={isActive.bind(this,link)} >
-                            <Icon className="listRowIcon" ></Icon>
-                            <p className="itemTitle">{title}</p> 
-                        </NavLink>
-                    </ListItemText>
-                </ListItem>
-            
-        );
+    return (
+
+        <ListItem className="itemText">
+            <ListItemText>
+                <NavLink className="itemLink" activeClassName="activeLink" to={link} isActive={isActive.bind(this, link)} >
+                    <Icon className="listRowIcon" ></Icon>
+                    <p className="itemTitle">{title}</p>
+                </NavLink>
+            </ListItemText>
+        </ListItem>
+
+    );
 }
 
 
@@ -138,39 +138,39 @@ function Content() {
     useEffect(() => {
         AOS.init({ duration: 1200 });
         AOS.refresh();
-      }, []);
+    }, []);
 
     return (
 
         <Container className="contentContainer">
-                <h1 className="cvWelcome">BIENVENUE SUR MON CV</h1>
-                <hr></hr>
-                <Row className="contentDiv">
-                    <Router > 
-                        <Col lg="3" className="contentLeft">
-                            <List disablePadding dense>
-                                <ListRow Icon={HomeIcon} link="/" title="Accueil"></ListRow>
-                                <hr></hr>
-                                <ListRow className="listRow" Icon={SchoolIcon} link="/Education" title="Education"  ></ListRow>
-                                <ListRow Icon={WorkIcon} link="/ExpPro" title="Expériences professionnelles"></ListRow>
-                                <ListRow Icon={StyleIcon} link="/Competences" title="Compétences"></ListRow>
-                                <ListRow Icon={LanguageIcon} link="/Langues" title="Langues"></ListRow>
-                                <ListRow Icon={ReceiptIcon} link="/Accomplissements" title="Accomplissements"></ListRow>
-                                <ListRow Icon={SportsEsportsIcon} link="/Centre" title="Centre d'interêt"></ListRow>
-                            </List>
-                        </Col>  
+            <h1 className="cvWelcome">BIENVENUE SUR MON CV</h1>
+            <hr></hr>
+            <Row className="contentDiv">
+                <Router >
+                    <Col lg="3" className="contentLeft">
+                        <List disablePadding dense>
+                            <ListRow Icon={HomeIcon} link="/" title="Accueil"></ListRow>
+                            <hr></hr>
+                            <ListRow className="listRow" Icon={SchoolIcon} link="/Education" title="Education"  ></ListRow>
+                            <ListRow Icon={WorkIcon} link="/ExpPro" title="Expériences professionnelles"></ListRow>
+                            <ListRow Icon={StyleIcon} link="/Competences" title="Compétences"></ListRow>
+                            <ListRow Icon={LanguageIcon} link="/Langues" title="Langues"></ListRow>
+                            <ListRow Icon={ReceiptIcon} link="/Accomplissements" title="Accomplissements"></ListRow>
+                            <ListRow Icon={SportsEsportsIcon} link="/Centre" title="Centre d'interêt"></ListRow>
+                        </List>
+                    </Col>
 
-                        <Col lg="9">
-                            <Route exact path="/"><Landing></Landing></Route>
-                            <Route exact path="/Education"><Education title="Education"></Education></Route>
-                            <Route exact path="/ExpPro"><ExpPro title="Expériences professionnelles"></ExpPro></Route>
-                            <Route exact path="/Competences"><Competences title="Compétences"></Competences></Route>
-                            <Route exact path="/Accomplissements"><Accomplissements title="Accomplissements"></Accomplissements></Route>
-                            <Route exact path="/Langues"><Langues title="Langues"></Langues></Route>
-                            <Route exact path="/Centre"><Centre title="Centre d'interêt"></Centre></Route>
-                        </Col> 
-                    </Router>
-                </Row>   
+                    <Col lg="9">
+                        <Route exact path="/"><Landing></Landing></Route>
+                        <Route exact path="/Education"><Education title="Education"></Education></Route>
+                        <Route exact path="/ExpPro"><ExpPro title="Expériences professionnelles"></ExpPro></Route>
+                        <Route exact path="/Competences"><Competences title="Compétences"></Competences></Route>
+                        <Route exact path="/Accomplissements"><Accomplissements title="Accomplissements"></Accomplissements></Route>
+                        <Route exact path="/Langues"><Langues title="Langues"></Langues></Route>
+                        <Route exact path="/Centre"><Centre title="Centre d'interêt"></Centre></Route>
+                    </Col>
+                </Router>
+            </Row>
         </Container>
 
     );
