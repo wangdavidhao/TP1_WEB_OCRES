@@ -27,7 +27,7 @@ function Caption(){
                 <PersonIcon className="personIcon" fontSize="large"></PersonIcon>
                 <h1 data-aos="zoom-out">A propos de moi ... </h1>
 
-                <p className="pCaption">Je m'appelle David Wang, j'ai 20 ans et j'habite à Saint-Denis. 
+                <p className="pCaption">Je m'appelle David Wang, j'ai 20 ans et j'habite à Paris. 
                 Collaboration, détermination, organisation et sérieux sont mes principaux atouts.</p>
 
                 <div className="socialCaption">

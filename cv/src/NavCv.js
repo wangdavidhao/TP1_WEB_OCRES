@@ -1,26 +1,32 @@
-import React, {useEffect, useState} from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { Image, Container, Row, Col, Button ,  FormControl, Navbar, Nav, Form} from 'react-bootstrap'; //All Bootstrap imports
-import { NavLink, useHistory } from 'react-router-dom';
+import React, {useEffect} from 'react'
+
+import { Container, Row, Col,  Navbar} from 'react-bootstrap'; //All Bootstrap imports
+import {  useHistory } from 'react-router-dom';
 import './NavCv.css'
 
 import HomeSharpIcon from '@material-ui/icons/HomeSharp';
 import DraftsSharpIcon from '@material-ui/icons/DraftsSharp';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import TocIcon from '@material-ui/icons/Toc';
 
-import Landing from './Landing.js';
-import FooterCv from './FooterCv.js';
-import Contact from './Contact.js';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 export const NavCv = props => {
 
-  const isActive = (path, match, location) => !!(match || path === location.pathname);
+  useEffect(() => {
+        AOS.init({ duration: 1200 });
+        AOS.refresh();
+      }, []);
+
   const history = useHistory();
 
-  const redirect = path => history.push(path);
+  let bool = false;
 
-  console.log(props.title);
+  const redirect = path => {
+    history.push(path);
+  }
 
 
     return (
@@ -33,7 +39,7 @@ export const NavCv = props => {
                 <Navbar.Collapse id="nav-collapse">
                   <div className="navbarCv__items">
                       <ul>
-                        <li><a className={props.title==="accueil" ? "selected" : ""} onClick={() => redirect('./')}><HomeSharpIcon></HomeSharpIcon><p >Accueil</p></a></li>
+                        <li><a className={props.title==="accueil" ? "selected" : ""} onClick={() => redirect('./')}><HomeSharpIcon data-aos={props.title==="accueil" ? "fade-right" : ""}></HomeSharpIcon><p >Accueil</p></a></li>
                         <li><a className={props.title==="contact" ? "selected" : ""} onClick={() => redirect('./Contact')}><DraftsSharpIcon></DraftsSharpIcon><p >Contact</p></a></li>
                         <li><a><FacebookIcon></FacebookIcon><p>Suivez-moi !</p></a></li>
                       </ul>

@@ -5,20 +5,8 @@
     box-shadow: 4px 4px 12px #aaa;
 }
 
-.contentDiv{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.contentLeft{
-    border-right: 1px solid black;
-
-}
-
-
-.listRow{
-    display: flex;
-    align-items: center;
+.contentRight{
+    border-left: 1px solid black;
 }
 
 .itemText{
@@ -28,11 +16,14 @@
     text-decoration: none;
 }
 
+.itemText:hover{
+    cursor:pointer;
+    background-color: lightgray;
+}
+
 .itemLink{
     text-decoration: none;
     color:inherit;
-
-    
 }
 
 .itemLink:hover{
@@ -44,50 +35,30 @@
 .activeLink{
     color:#1045F5 ;
     font-weight: bold;
-    
 }
 
 .activeLink > p{
-
     border-bottom: 3px solid #1045F5;
-
 }
 
 .activeLink > .listRowIcon {
     color: #1045F5;
 }
 
-.itemText:hover{
-    cursor:pointer;
-    background-color: lightgray;
-}
 
 .cvWelcome{
-    padding:20px;
+    padding:2rem;
     text-align: center;
     border-bottom:3px solid #1045F5;
 }
 
 .listRowIcon{
     color:#606060;
-    margin-right: 15px;
-
 }
 
 .itemLink:hover> .listRowIcon{
     color:#1045F5;
 }
-
-
-.hrDiv{ 
-  
-    border:         none;
-    border-left:    1px solid hsla(200, 10%, 50%,100);
-    height:         100vh;
-    width:          1px;       
-}
-
-
 
 .cvCat{
     border-bottom: 2px solid #1045F5;
@@ -96,7 +67,7 @@
 }
 
 .pointIcon{
-    margin: 5px;
+    margin: 1rem;
     color: #1045F5;
 }
 
@@ -112,30 +83,27 @@
     margin-bottom: 5px;
 }
 
-.dateEducation{
+.date{
     color: #1045F5;
     font-style: italic;
 }
 
-.schoolRow{
+.dateRow{
     display: flex;
     justify-content: space-between;
 }
 
-.dateExp{
-    color: #1045F5;
-    font-style: italic;
 
+.divCompet{
+    display: flex;
+    justify-content: space-around;
 }
 
-.expRow{
+.allCat{
     display: flex;
-    justify-content: space-between;
-
+    flex-direction: column;
 }
 
-.itemTitle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.oneCat{
+    margin-bottom: 1.5rem;
 }

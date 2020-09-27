@@ -1,4 +1,10 @@
-
-
+@media screen and (max-width:400px){
+    body h1{
+        font-size: 1.8rem;
+    }
+    body p,a{
+        font-size: 0.8rem;
+    }
+}
 
 
